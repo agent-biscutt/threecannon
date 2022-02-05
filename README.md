@@ -1,8 +1,8 @@
 # threecannon
-### Some functions for melding three.js and cannon.js
+Functions for melding three.js and cannon.js
 ## Functions
 
-## Window events
+### Window events
 For window resizing, I use this:
 ```js
 window.addEventListener('resize', function (){onWindowResize(camera,renderer)}, false);
@@ -16,7 +16,7 @@ firstPlayer(camera)
 ```
 This makes the camera rotate with the mouse as if in first person.
 
-## Making Objects
+### Making Objects
 So far, only a few objects are supported.
 Sphere:
 ```js
@@ -30,7 +30,7 @@ Cylinder:
 ```js
 var cylinder=makeCylinder(radiusTop=1,radiusBottom=1,height=1,mass=1,heightSegments=32,colour=0xffffff);
 ```
-## Moving Objects
+### Moving Objects
 I use this to apply even impulses to objects:
 ```js
 move(ob,x=0,y=0,z=0);
@@ -40,7 +40,7 @@ e.g:
 ```js
 move([cannonObject,threeObject],10,2,2);
 ```
-## Moving and syncing cannon.js objects to three.js objects
+### Moving and syncing cannon.js objects to three.js objects
 It is suggested that you keep all objects together in an array, like so:
 ```js
 var objects=[box,sphere,cylinder];

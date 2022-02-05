@@ -133,4 +133,5 @@ function sync(objects){
     }
   }
 }
-export{firstPlayer,add,createWorld,makeCylinder,makeBox,makeSphere,move,movement,onWindowResize,setCookie,getCookie,eraseCookie};
+module.exports = {
+    firstPlayer,add,createWorld,makeCylinder,makeBox,makeSphere,move,movement,onWindowResize,setCookie,getCookie,eraseCookie};

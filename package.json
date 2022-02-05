@@ -1,9 +1,36 @@
 {
   "name": "threecannon",
   "version": "0.0.1",
-  "license": "MIT",
+  "description": "Functions to help meld three.js and cannon.js",
+  "homepage": "https://github.com/agent-biscutt/threecannon/",
+  "author": "Agent Biscutt agent.biscutt@gmail.com",
+  "keywords": [
+    "cannon.js",
+    "cannon",
+    "physics",
+    "engine",
+    "3d",
+    "three",
+    "three.js",
+    "threecannon"
+  ],
+  "main": "./src/index.js",
+  "engines": {
+    "node": "*"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/agent-biscutt/threecannon/index.js.git"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/agent-biscutt/threecannon/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+  },
+  "dependencies": {}
 }

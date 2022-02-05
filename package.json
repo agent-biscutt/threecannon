@@ -2,5 +2,8 @@
   "name": "threecannon",
   "version": "0.0.1",
   "license": "MIT",
-  "private": false
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agent-biscutt/threecannon/index.js.git"
+  }
 }

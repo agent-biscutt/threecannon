@@ -45,9 +45,9 @@ function movement(moveditem,object) {
                                                  }
 };
 function move(ob,x=0,y=0,z=0){
-  ob.applyLocalImpulse(new CANNON.Vec3(x,0 ,0),ob.quaternion);
-  ob.applyLocalImpulse(new CANNON.Vec3(0,y,0),ob.quaternion);
-  ob.applyLocalImpulse(new CANNON.Vec3(0,0,z),ob.quaternion);
+  ob[0].applyLocalImpulse(new CANNON.Vec3(x,0 ,0),ob.quaternion);
+  ob[0].applyLocalImpulse(new CANNON.Vec3(0,y,0),ob.quaternion);
+  ob[0].applyLocalImpulse(new CANNON.Vec3(0,0,z),ob.quaternion);
 };
 
 // Creating objects
@@ -61,16 +61,17 @@ function makeSphere(size,mass,colour){
   boxbody.position.set(0,0,0);
   return([boxbody,boxMesh]);
 };
-function makeBox(size,mass,colour){
+function makeBox(sizex,sizey=sizex,sizez=sizex,mass=1,colour){
   var boxbody = new CANNON.Body({ mass: mass });
-  var boxShape = new CANNON.Box(new CANNON.Vec3(size/2,size/2,size/2));
+  var boxShape = new CANNON.Box(new CANNON.Vec3(sizex/2,sizey/2,sizez/2));
   boxbody.addShape(boxShape);
-  var geo= new THREE.BoxGeometry(size,size,size);
+  var geo= new THREE.BoxGeometry(sizex,sizey,sizez);
   var mat = new THREE.MeshLambertMaterial( { color: colour } );
   var boxMesh = new THREE.Mesh(geo, mat);
   boxbody.position.set(0,0,0);
   return([boxbody,boxMesh]);
-};
+}
+
 function makeCylinder(radiusTop=1,radiusBottom=1,height=1,mass=1,heightSegments=32,colour=0xffffff){
   const geometry = new THREE.CylinderGeometry( radiusTop,radiusBottom, height, heightSegments );
   const material = new THREE.MeshBasicMaterial( {color: colour} );
@@ -95,3 +96,40 @@ function add(o,ws){
   ws[0].add(o[0])
 };
 
+// "First Person" view functions
+// catch mouse
+function firstPlayer(camera){
+  function mouseCatch(){
+    document.body.requestPointerLock();
+    active=true;
+  }
+  function look(event,camera) {
+    if (active){
+      camera.rotation.order="YXZ";
+      camera.rotation.y -= event.movementX/500;
+      camera.rotation.x -= event.movementY/500;
+    }
+  }
+  function changepointer() {
+    if(document.pointerLockElement != null){
+      active=true;
+    }else{
+      active=false;
+    }
+  }
+  document.addEventListener('pointerlockchange', changepointer, false);
+  document.addEventListener('onclick', mouseCatch, false);
+  document.addEventListener('pointerlockchange', changepointer, false);
+}
+// Sync three.js and cannon.js objects
+function sync(objects){
+  for (x in objects){
+    for (y in objects[x]){
+      if (objects[x][y] instanceof THREE.Camera) {
+        objects[x][y].position.copy(objects[x][0].position);
+      }
+        objects[x][y].position.copy(objects[x][0].position);
+        objects[x][y].quaternion.copy(objects[x][0].quaternion);
+    }
+  }
+}

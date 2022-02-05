@@ -51,7 +51,7 @@ function move(ob,x=0,y=0,z=0){
 };
 
 // Creating objects
-function makeSphere(size,mass,colour){
+function makeSphere(size=1,mass=1,colour=0xffffff){
   var boxbody = new CANNON.Body({ mass: mass });
   var boxShape = new CANNON.Sphere(size);
   boxbody.addShape(boxShape);
@@ -61,7 +61,7 @@ function makeSphere(size,mass,colour){
   boxbody.position.set(0,0,0);
   return([boxbody,boxMesh]);
 };
-function makeBox(sizex,sizey=sizex,sizez=sizex,mass=1,colour){
+function makeBox(sizex,sizey=sizex,sizez=sizex,mass=1,colour=0xffffff){
   var boxbody = new CANNON.Body({ mass: mass });
   var boxShape = new CANNON.Box(new CANNON.Vec3(sizex/2,sizey/2,sizez/2));
   boxbody.addShape(boxShape);

@@ -30,7 +30,7 @@ Cylinder:
 ```js
 var cylinder=makeCylinder(radiusTop=1,radiusBottom=1,height=1,mass=1,heightSegments=32,colour=0xffffff);
 ```
-## Moving Ojects
+## Moving Objects
 I use this to apply even impulses to objects:
 ```js
 move(ob,x=0,y=0,z=0);
@@ -57,4 +57,12 @@ function render(){
   /*--snip--*/
 };
 render();
+```
+
+
+Some cookie functions are also added to this package:
+```js
+setCookie(name,value,days);
+var cookie=getCookie(name);
+eraseCookie(name);
 ```

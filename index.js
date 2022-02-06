@@ -98,8 +98,7 @@ function add(o,ws){
 
 // "First Person" view functions
 // catch mouse
-function firstPlayer(camera,document){
-  function mouseCatch(){
+function mouseCatch(){
     document.body.requestPointerLock();
     active=true;
   }
@@ -117,6 +116,8 @@ function firstPlayer(camera,document){
       active=false;
     }
   }
+function firstPlayer(camera,document){
+  
   document.body.addEventListener('pointerlockchange', changepointer, false);
   document.body.addEventListener('onclick', mouseCatch, false);
   document.body.addEventListener('pointerlockchange', function(){look(camera);}, false);

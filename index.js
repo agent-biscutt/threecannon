@@ -109,7 +109,7 @@ function mouseCatch(doc){
       camera.rotation.x -= event.movementY/500;
     }
   }
-  function changepointer(doc) {
+  function changepointer() {
     if(!active){
       active=true;
     }else{
@@ -117,7 +117,7 @@ function mouseCatch(doc){
     }
   }
 function firstPlayer(camera,doc=document){
-  doc.body.addEventListener('pointerlockchange', function(){changepointer(doc);}, false);
+  doc.body.addEventListener('pointerlockchange', function(){changepointer();}, false);
   doc.body.addEventListener('click', function(){mouseCatch(doc);}, false)
   doc.body.addEventListener('mousemove', function(){look(event,camera);}, false);
 }

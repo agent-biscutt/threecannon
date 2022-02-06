@@ -110,14 +110,14 @@ function mouseCatch(doc){
     }
   }
   function changepointer() {
-    if(!active){
+    if(document.pointerLockElement!=null){
       active=true;
     }else{
       active=false;
     }
   }
 function firstPlayer(camera,doc=document){
-  doc.body.addEventListener('pointerlockchange', function(){changepointer();}, false);
+  doc.addEventListener('pointerlockchange', function(){changepointer();}, false);
   doc.body.addEventListener('click', function(){mouseCatch(doc);}, false)
   doc.body.addEventListener('mousemove', function(){look(event,camera);}, false);
 }

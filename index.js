@@ -110,7 +110,7 @@ function mouseCatch(doc){
     }
   }
   function changepointer(doc) {
-    if(doc.pointerLockElement != null){
+    if(!active){
       active=true;
     }else{
       active=false;

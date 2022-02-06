@@ -117,9 +117,9 @@ function firstPlayer(camera){
       active=false;
     }
   }
-  document.addEventListener('pointerlockchange', changepointer, false);
-  document.addEventListener('onclick', mouseCatch, false);
-  document.addEventListener('pointerlockchange', changepointer, false);
+  document.body.addEventListener('pointerlockchange', changepointer, false);
+  document.body.addEventListener('onclick', mouseCatch, false);
+  document.body.addEventListener('pointerlockchange', changepointer, false);
 }
 // Sync three.js and cannon.js objects
 function sync(objects){

@@ -18,6 +18,7 @@ This makes the camera rotate with the mouse as if in first person.
 
 ### Making Objects
 So far, only a few objects are supported.
+
 Sphere:
 ```js
 var sphere=makeSphere(size=1,mass=1,colour=0xffffff);

@@ -149,7 +149,7 @@ function mouseCatch(doc){
     active=true;
     
     // if the 'try' count is above 50, chuck an error
-    if (c>50){throw('Cursor failed to lock');}
+    if (c>5000){throw('Cursor failed to lock');}
   }
   }
 // function for controlling first person camera

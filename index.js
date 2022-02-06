@@ -162,9 +162,9 @@ function mouseCatch(doc){
       camera.rotation.y -= event.movementX/(5*sensitivity);
       // limits x (up and down) rotation between 'top' and 'bottom'
       // if this wasn't here, user could flip the camera upside down
-      if (camera.rotation.x-event.movementY/(5*sensitivity)<-1){
+      if ((camera.rotation.x-event.movementY/(5*sensitivity))<-1){
       camera.rotation.x=-1;
-      }else if (camera.rotation.x-event.movementY/(5*sensitivity)>1){\
+      }else if ((camera.rotation.x-event.movementY/(5*sensitivity))>1){
       camera.rotation.x=1;
       }else{
         // else just move as usual

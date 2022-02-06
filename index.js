@@ -98,7 +98,7 @@ function add(o,ws){
 
 // "First Person" view functions
 // catch mouse
-function firstPlayer(camera){
+function firstPlayer(camera,document){
   function mouseCatch(){
     document.body.requestPointerLock();
     active=true;
@@ -119,7 +119,7 @@ function firstPlayer(camera){
   }
   document.body.addEventListener('pointerlockchange', changepointer, false);
   document.body.addEventListener('onclick', mouseCatch, false);
-  document.body.addEventListener('pointerlockchange', changepointer, false);
+  document.body.addEventListener('pointerlockchange', function(){look(camera);}, false);
 }
 // Sync three.js and cannon.js objects
 function sync(objects){

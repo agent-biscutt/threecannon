@@ -119,7 +119,7 @@ function mouseCatch(doc){
 function firstPlayer(camera,doc){
   
   doc.body.addEventListener('pointerlockchange', function(){changepointer(doc);}, false);
-  doc.body.addEventListener('onclick', function(){mouseCatch(doc);, false);}, false)
+  doc.body.addEventListener('onclick', function(){mouseCatch(doc);}, false)
   doc.body.addEventListener('pointerlockchange', function(){look(event,camera);}, false);
 }
 // Sync three.js and cannon.js objects

@@ -99,8 +99,13 @@ function add(o,ws){
 // "First Person" view functions
 // catch mouse
 function mouseCatch(doc){
+  var c=0;
+  while(document.pointerLockElement==null){
+    c+=1;
     doc.body.requestPointerLock();
     active=true;
+    if (c>50){throw('Cursor failed to lock');}
+  }
   }
   function look(event,camera) {
     if (active){

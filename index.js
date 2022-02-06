@@ -98,8 +98,8 @@ function add(o,ws){
 
 // "First Person" view functions
 // catch mouse
-function mouseCatch(){
-    document.body.requestPointerLock();
+function mouseCatch(doc){
+    doc.body.requestPointerLock();
     active=true;
   }
   function look(event,camera) {
@@ -109,18 +109,18 @@ function mouseCatch(){
       camera.rotation.x -= event.movementY/500;
     }
   }
-  function changepointer() {
-    if(document.pointerLockElement != null){
+  function changepointer(doc) {
+    if(doc.pointerLockElement != null){
       active=true;
     }else{
       active=false;
     }
   }
-function firstPlayer(camera,document){
+function firstPlayer(camera,doc){
   
-  document.body.addEventListener('pointerlockchange', changepointer, false);
-  document.body.addEventListener('onclick', mouseCatch, false);
-  document.body.addEventListener('pointerlockchange', function(){look(camera);}, false);
+  doc.body.addEventListener('pointerlockchange', function(){changepointer(doc);}, false);
+  doc.body.addEventListener('onclick', function(){mouseCatch(doc);, false);}, false)
+  doc.body.addEventListener('pointerlockchange', function(){look(event,camera);}, false);
 }
 // Sync three.js and cannon.js objects
 function sync(objects){

@@ -135,21 +135,15 @@ function add(o,ws){
 
 // "First Person" view functions
 // mouseCatch attempts to lock the cursor
-function mouseCatch(doc){
-  // a counter for amount of tries
-  var c=0;
-  
+function mouseCatch(doc){  
   // while the cursor isn't locked
-  while(document.pointerLockElement==null){
-    // plus one to 'tries'
-    c+=1;
+  if(document.pointerLockElement==null){
+
     //request lock
     doc.body.requestPointerLock();
     //active == true. Variable is important for determining other function things
     active=true;
     
-    // if the 'try' count is above 50, chuck an error
-    if (c>5000){throw('Cursor failed to lock');}
   }
   }
 // function for controlling first person camera

@@ -136,11 +136,12 @@ function add(o,ws){
 // "First Person" view functions
 // mouseCatch attempts to lock the cursor
 function mouseCatch(doc){  
-  // while the cursor isn't locked
-  if(document.pointerLockElement==null){
-
+  
     //request lock
     doc.body.requestPointerLock();
+  // if the cursor is locked
+  if(document.pointerLockElement!=null){
+
     //active == true. Variable is important for determining other function things
     active=true;
     

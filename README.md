@@ -4,7 +4,7 @@ Functions for melding three.js and cannon.js
 ## Getting Started
 Import the functions like this:
 ```html
-<script src="https://cdn.jsdelivr.net/gh/agent-biscutt/threecannon@0.0.13/index.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/agent-biscutt/threecannon@0.0.15/index.js" type="text/javascript"></script>
  ```
  After this, it's as simple as calling the name of the function like so:
  ```js

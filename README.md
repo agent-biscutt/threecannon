@@ -8,9 +8,9 @@ Import the functions like this:
  ```
  After this, it's as simple as calling the name of the function like so:
  ```js
- var WandS = createWorld()
+ var worldscene = createWorld()
  ```
- `WandS` is both your CANNON world and THREE scene together!
+ `worldscene` is both your CANNON world and THREE scene together!
  
  All CANNON objects in these functions are always `[0]` of any object, and all THREE objects are always `[1]`. This is useful information for interfacing this project with your own.
  
@@ -18,8 +18,16 @@ Import the functions like this:
  
  This function makes it easier to add objects to your world/scene.
  ```js
- add(object,WandS)
+ add(object,worldscene)
  ```
+ 
+ Remove objects with `remove()`.
+ 
+ Makes removing easy.
+ 
+```js
+remove(object,worldscene)
+```
  
  Built in `sync()` function makes it easy to sync the movements of the CANNON world to the visuals of the THREE scene.
  
@@ -79,11 +87,11 @@ This project uses `createWorld()` to create the CANNON world and THREE scene.
 
 So call this as:
 ```js
-WandS=createWorld()
+worldscene=createWorld()
 ```
 Else, just pass your own CANNON world and THREE scene to a list, respectively.
 
-For example, `WandS[0]` should and will always be a CANNON world, and `WandS[1]` should and will always be a THREE scene.
+For example, `worldscene[0]` should and will always be a CANNON world, and `worldscene[1]` should and will always be a THREE scene.
 
 ### Moving and syncing cannon.js objects to three.js objects
 It is suggested that you keep all objects together in an array, like so:

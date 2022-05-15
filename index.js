@@ -122,7 +122,7 @@ function makeCylinder(radiusTop=1,radiusBottom=1,height=1,mass=1,heightSegments=
 // Creating THREE.js scene and CANNON.js world
 function createWorld(){
   // return a new CANNON world, and new THREE scene as list.
-  return([new CANNON.World,new THREE.Scene]);
+  return([new CANNON.World(),new THREE.Scene()]);
 };
 
 // Add function to add objects created by above functions into world+scene also created by above function
